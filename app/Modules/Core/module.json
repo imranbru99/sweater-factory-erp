@@ -1,0 +1,8 @@
+{
+    "key": "core",
+    "name": "Core & Settings",
+    "name_bn": "মূল ও সেটিংস",
+    "description": "Branches, access, numbering, approvals, audit, notifications and company settings.",
+    "is_core": true,
+    "sort": 1
+}

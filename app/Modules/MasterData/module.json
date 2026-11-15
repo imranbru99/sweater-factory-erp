@@ -1,0 +1,8 @@
+{
+    "key": "master-data",
+    "name": "Master Data",
+    "name_bn": "মাস্টার ডাটা",
+    "description": "Buyers, suppliers, styles, gauges, machines, units, holidays and the other registers the factory used to keep in ledgers.",
+    "is_core": true,
+    "sort": 2
+}

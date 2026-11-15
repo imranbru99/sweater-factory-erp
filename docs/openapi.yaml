@@ -1,0 +1,44 @@
+openapi: 3.0.3
+info:
+  title: Sweater Factory API
+  version: 0.1.0
+  description: Phase 1 endpoints for a phone or a machine counter. Tokens are Laravel Sanctum personal access tokens.
+servers:
+  - url: /api/v1
+paths:
+  /login:
+    post:
+      summary: Exchange an email and password for a token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email: { type: string, format: email }
+                password: { type: string }
+                device: { type: string }
+      responses:
+        '200':
+          description: Token and the signed-in user
+        '422':
+          description: Credentials rejected or rate limited
+  /me:
+    get:
+      summary: The signed-in user
+      security: [{ bearer: [] }]
+      responses:
+        '200': { description: User payload }
+  /branches:
+    get:
+      summary: Units the signed-in user may work in
+      security: [{ bearer: [] }]
+      responses:
+        '200': { description: Branch list }
+components:
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
